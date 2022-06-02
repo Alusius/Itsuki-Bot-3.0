@@ -2,16 +2,16 @@ let { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessage
 let fs = require('fs')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
+let botname = global.namebot
 let thumb1 = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
  try {
- 	thumb1 = 'https://telegra.ph/file/2aca3f643a58fc202b146.jpg'
+ 	thumb1 = `https://api.lolhuman.xyz/api/textprome/blackpink?apikey=Papah-Chan&text=${botname}`
 const moment = require("moment-timezone");
 const salam = moment(Date.now()).tz('Asia/Jakarta').locale('id').format('a')
 let wm = global.wm
-let botname = global.namebot
 let name = conn.getName(m.sender)
 let anu =  `
-Haii Kak ${name} Selamat ${salam} 😊
+Haii Kak ${name} Selamat ${salam} 
 
 Saya ${botname}, Bot Ini Adalah Beta Multi-Device WhatsApp.
 Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Owner Agar Segera Di Perbaiki 🙏
@@ -33,7 +33,7 @@ Jika Kamu Menemukan Semacam Bug Atau Kesalahan Mohon Dimaklumi Dulu Ya, Lapor Ow
                 {
               urlButton: {
                 displayText: 'Source Code',
-                id: 'Belum Ada Banh, Tunggu Aja Update Selanjutnya Di Channel Youtube Hyzer Official'
+                url: 'Belum Ada Banh, Tunggu Aja Update Selanjutnya Di Channel Youtube Hyzer Official'
               }
 
              },
