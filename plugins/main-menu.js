@@ -322,7 +322,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                 "rows": [{
                   "title": `│🧾│ SEMUA PERINTAH`,
                   "description": "Menampilkan Menu All",
-                  "rowId": '.allmenu'
+                  "rowId": '.? all'
                   }, {
                   "title": "│ 📝│ ABSEN & VOTING",
                   "description": "Menampilkan Menu Absen",
