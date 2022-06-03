@@ -25,8 +25,6 @@ global.wm = '𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
 global.watermark = wm
 global.wm2 = '                     「 𝚂𝙷𝙸𝚁𝙾-𝙼𝙳 あ⁩ 」'
 global.wm3 = '⫹⫺ 𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
-global.htki = '––––––『' 
-global.htka = '』––––––'
 global.thumbnail = 'https://telegra.ph/file/7982576e5be06907364c5.jpg'
 global.media = 'https://telegra.ph/file/72168c6f1aaa90315c369.jpg'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=smurfs-logo&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&text='
