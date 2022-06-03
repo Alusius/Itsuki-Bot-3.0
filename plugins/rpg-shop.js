@@ -680,7 +680,7 @@ bila sudah tidak ada harganya, berarti sudah tidak bisa dibeli / sudah level max
                             }
                             break
             default:
-                return conn.sendButton(m.chat, Kchat,wm, 'Inventory', '.inv', m)
+                return conn.sendBut(m.chat, Kchat,wm, 'Inventory', '.inv', m)
             }
         } else if (/beli|buy/i.test(command)) {
             const count = args[1] && args[1].length > 0 ? Math.min(99999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
@@ -867,4 +867,4 @@ handler.tags = ['rpg']
 handler.command = /^(shop|toko|buy|beli|sell|jual|up|upgrade|repair)$/i
 module.exports = handler
 
-let wm = global.botwm
+let wm = global.wm
