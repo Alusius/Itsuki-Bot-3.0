@@ -44,7 +44,7 @@ you can cook it to increase stamina or blood💉
 _example:_
 ${ usedPrefix }Cook catfish `    
         setTimeout(() => {                 
-        conn.sendButtonImg(m.chat, gggd, mcng, 'Inventory', '.inv', m)
+        conn.sendButtonImg(m.chat, gggd, mcng, wm2, 'Inventory', '.inv', m)
          if (psepick > 0 ) {
          	global.db.data.users[m.sender].psepick += psepick * 1
          conn.sendBut(m.chat, `You Get 🎁chest weapons epic ${psepick} item`, wm2, 'again', '.mancing', m)
