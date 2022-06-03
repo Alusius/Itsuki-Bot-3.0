@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     let timers = clockString(_timers) 
     if (new Date - user.lasthourly > 3600000) {
     let ghor = 'https://telegra.ph/file/f7ee012bccf5319151ed7.jpg'
-    let str = `+2500 money 💹\n+1 Legendary crate 🧰\n+2 String 🕸️\n+2 Iron ⛓️\n+3 Gold 🪙`
+    let str = `+2500 money 💹\n+1 Legendary crate 🧰\n+2 String 🕸️\n+2 Iron ⛓️\n+3 Gold 🪙\n+1 Limit 🧬`
         conn.send2ButtonImg(m.chat, ghor, str, wm, 'Claim', '.claim', 'Monthly', '.monthly', m)
         conn.reply(str)
         user.money += 2500
@@ -15,6 +15,7 @@ let handler = async (m, { conn }) => {
         user.iron += 2
         user.emas += 2
         user.string += 3
+        user.limit += 1
         user.lasthourly= new Date * 1
     } else {
         conn.sendBut(m.chat, `silahkan tunggu *🕒${timers}* lagi untuk bisa mengclaim lagi`, wm, 'Inventory', '.inv',m )
