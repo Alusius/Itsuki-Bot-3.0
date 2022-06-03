@@ -6,7 +6,7 @@ let handler = async (m, { conn }) => {
     let _timers = (3600000 - (new Date - user.lasthourly))
     let timers = clockString(_timers) 
     if (new Date - user.lasthourly > 3600000) {
-    let ghor = 'https://telegra.ph/file/30fccb706707efe846b27.jpg'
+    let ghor = 'https://telegra.ph/file/f7ee012bccf5319151ed7.jpg'
     let str = `+2500 money 💹\n+1 Legendary crate 🧰\n+2 String 🕸️\n+2 Iron ⛓️\n+3 Gold 🪙`
         conn.send2ButtonImg(m.chat, ghor, str, wm, 'Claim', '.claim', 'Monthly', '.monthly', m)
         conn.reply(str)
