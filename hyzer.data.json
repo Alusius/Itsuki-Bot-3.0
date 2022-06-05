@@ -1,1 +1,55 @@
-//ubah jadi sessionmu
+creds": {
+    "noiseKey": {
+      "private": {
+        "type": "Buffer",
+        "data": "iHIm8oCqgaMaCF7pcUigKGeLGZzV/CwaYKl2OBVro0Y="
+      },
+      "public": {
+        "type": "Buffer",
+        "data": "J1hzipuVv5OuxJ3K1wsMkIDQSSxDbnHlefQv01EJbnI="
+      }
+    },
+    "signedIdentityKey": {
+      "private": {
+        "type": "Buffer",
+        "data": "iGMoT2hogJy/po++d5PvSBdN+by5SoJkOVlxDYSZlFw="
+      },
+      "public": {
+        "type": "Buffer",
+        "data": "9/J4AJMzNeHF9DxO3QRP6SpG7/lUitJ9R0uYESx0bWY="
+      }
+    },
+    "signedPreKey": {
+      "keyPair": {
+        "private": {
+          "type": "Buffer",
+          "data": "qJ9GlyboCG4nPXZz2YG2at8J71pfxawePY3/NsM69Fk="
+        },
+        "public": {
+          "type": "Buffer",
+          "data": "w1PLeKLj7z+6hFlwCbvDIu3TOKOfEKjy7k1YXmG21jg="
+        }
+      },
+      "signature": {
+        "type": "Buffer",
+        "data": "w3MURJCEK6buOccbptHO1kA+wS/4wEL/OQyyb/7BjSoCly5PDezdEm5k6/LPpqVlxFLlbzAPMwirtgyqIw6bgg=="
+      },
+      "keyId": 1
+    },
+    "registrationId": 209,
+    "advSecretKey": "cQrGK2BMG0El9Y50jAxjWVwdVLnUkN7/cN+8CrvOVpk=",
+    "nextPreKeyId": 1511,
+    "firstUnuploadedPreKeyId": 1511,
+    "serverHasPreKeys": true,
+    "account": {
+      "details": "CM+4iMkEEPuv3ZQGGAE=",
+      "accountSignatureKey": "SIB5EYxrBYjyhUAnTW5wEAuom11eu2TgUbUKw6WG5ws=",
+      "accountSignature": "I/OJ36+Ne4Be78i55LOygK1qfx5kPcmE2g8QSXWXTS4C8/IeP0Kv8ulEun1eTf3ibiUd+ySwM/catpU5oj1oCA==",
+      "deviceSignature": "Vwt+T8xb+LwnxCFOcE4xpfr/k4/cMNNXu+21e8kEPSznpOAirWA2EiYdeR3A4a9jQh1MSZpjYs7v0zrcMftcjg=="
+    },
+    "me": {
+      "id": "6285962365968:21@s.whatsapp.net",
+      "verifiedName": "",
+      "name": "I'm Botz Xinzuo-MD",
+      "jid": "6285962365968@s.whatsapp.net"
+    },
