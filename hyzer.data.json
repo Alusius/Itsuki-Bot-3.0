@@ -1,1 +1,9 @@
 //ubah jadi sessionmu
+ "62881022452891:1.0": {
+        "_sessions": {
+          "BfyHHWflahR8vaIufd6bvxvXYwbgPLCyShG7gkzt+YkS": {
+            "registrationId": 28,
+            "currentRatchet": {
+              "ephemeralKeyPair": {
+                "pubKey": "BTJAmFX6iJL2Ir2y6MTZHpxFVqo0DArhHS6zttU3AHhA",
+                "privKey": "CFdCcMC3RAOTX2GADWMEL2WTJ9IMWhMoc78llRjy03A="
