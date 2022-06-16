@@ -16,7 +16,7 @@ global.gopay = '085795035419'
 global.namebot = 'AzBoTz-Md'
 global.gc = 'https://chat.whatsapp.com/Jzd9DEVB5nODtNBk1VCNrV'
 global.web = 'https://github.com/AzRyCb' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
-global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
+global.price1 = 'Daftar layanan & harga sewabot\nTersedia berbagai macam payment\n(OVO,DANA,GOPAY,SHOPEEPAY)\n\nSewabot\n2k/hari\n4k/3 hari\n6k/minggu\n8k/bulan\n15k permanen untuk 1 grup\n20k\npermanen untuk 3 grup\n25k permanen untuk 5 grup + prem 3hari'
 
 //=======『 Tampilan Dan Lainnya 』============//
 global.fotonya1 = 'https://i.ibb.co/TBVZ0YH/thumb.jpg' //ganti jadi foto bot mu
