@@ -2,7 +2,7 @@
 <img src="https://telegra.ph/file/677780c08cc83059ac934.jpg" alt="Hyzer Md-V3" width="300" />
 
 </p>
-<h1 align="center">Hyzer Official</h1>
+<h1 align="center">Hyzer Official Bot</h1>
 
 >
 >
