@@ -13,9 +13,9 @@ global.pulsa = '085212023766'
 global.gopay = '087892711054'
 
 //=============『 Info Bot 』=================//
-global.namebot = 'ShiroBot-Md'
-global.gc = 'https://chat.whatsapp.com/Jzd9DEVB5nODtNBk1VCNrV'
-global.web = 'https://hyzerr-apii.herokuapp.com' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
+global.namebot = 'Yuno Gasai Bot'
+global.gc = 'bit.ly/AnyaBot-Group'
+global.web = 'https://github.com/Hyzerr' //ubah jadi website lu, bisa link ig, link github, link yt, klo link gc ntr beda tampilan lagi. 
 global.price1 = '1 bulan = 10.000\n2 Minggu 7.000\n1 Minggu 5.000'
 
 //=======『 Tampilan Dan Lainnya 』============//
@@ -23,10 +23,10 @@ global.fotonya1 = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg' //ganti ja
 global.fotonya2 = 'https://telegra.ph/file/8c471d45b6cedad43cf84.jpg' //ini juga ganti 
 global.lolkey = 'Papah-Chan' //biar mudah ngegantinya semisal apikeynya expired:v
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
-global.wm = '𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
+global.wm = 'ꜱʜɪʀᴏ ɪᴋᴀꜱᴀᴋɪ ʙᴏᴛ'
 global.watermark = wm
 global.wm2 = '                     「 𝚂𝙷𝙸𝚁𝙾-𝙼𝙳 あ⁩ 」'
-global.wm3 = '⫹⫺ 𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
+global.wm3 = '𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
 global.htki = '––––––『' 
 global.htka = '』––––––'
 global.media = 'https://telegra.ph/file/72168c6f1aaa90315c369.jpg'
