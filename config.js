@@ -1,7 +1,7 @@
 //=============『 Utama 』================== //
-global.owner = ['628578839210'] 
-global.mods = ['628578839210'] 
-global.prems = ['628578839210'] 
+global.owner = ['6285748839210'] 
+global.mods = ['6285748839210'] 
+global.prems = ['6285748839210'] 
 
 //=============『 Info Owner 』============== //
 global.nameowner = 'FajarM'
