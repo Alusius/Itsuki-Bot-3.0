@@ -5,7 +5,7 @@ global.prems = ['628578839210']
 
 //=============『 Info Owner 』============== //
 global.nameowner = 'FajarM'
-global.numberowner = '6287892711054'
+global.numberowner = '6285748839210'
 global.instagram = 'https://www.instagram.com/fajarmelfiano/'
 global.github = 'https://github.com/FajarMelfiano'
 global.dana = '085748839210'
