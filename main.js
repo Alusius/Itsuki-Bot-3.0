@@ -1,8 +1,10 @@
 require('./config')
+__path = process.cwd();
 const {
   useSingleFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
+const QRCode = require('qrcode')
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
@@ -13,6 +15,11 @@ const syntaxerror = require('syntax-error')
 const P = require('pino')
 const os = require('os')
 let simple = require('./lib/simple')
+const express = require('express')
+const app = express()
+const port = 3000
+
+app.set('view engine', 'ejs')
 var low
 try {
   low = require('lowdb')
@@ -82,9 +89,18 @@ if (!opts['test']) {
     if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
   }, 30 * 1000)
 }
-
+let qrcode = ""
 async function connectionUpdate(update) {
-  const { connection, lastDisconnect } = update
+  const { connection, lastDisconnect, qr} = update
+              if (qr) {
+              QRCode.toDataURL(qr).then((url) => { qrcode = url
+                app.get('/', (req, res) => {
+                  res.render(__path + '/views/scan.ejs', {
+                  qr: qrcode
+                })})
+              }
+
+             ) }
   global.timestamp.connect = new Date
   if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== WebSocket.CONNECTING) {
     console.log(global.reloadHandler(true))
@@ -225,3 +241,8 @@ async function _quickTest() {
 _quickTest()
   .then(() => conn.logger.info('Quick Test Done'))
   .catch(console.error)
+
+  
+	app.listen(port, () => {
+		console.log(`Example app listening on port ${port}`)
+	  })
