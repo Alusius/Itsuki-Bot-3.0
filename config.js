@@ -1,16 +1,16 @@
 //=============『 Utama 』================== //
-global.owner = ['6287892711054'] 
+global.owner = ['6281269734000'] 
 global.mods = [] 
 global.prems = [] 
 
 //=============『 Info Owner 』============== //
-global.nameowner = 'Hyzer Official'
-global.numberowner = '6287892711054'
+global.nameowner = 'Akmal Botz'
+global.numberowner = '6281269734000'
 global.instagram = 'https://instagram.com/hyzer_stfu'
 global.github = 'https://github.com/Hyzerr'
-global.dana = '087892711054'
-global.pulsa = '085212023766'
-global.gopay = '087892711054'
+global.dana = '081269734000'
+global.pulsa = '081269734000'
+global.gopay = '081269734000'
 
 //=============『 Info Bot 』=================//
 global.namebot = 'Yuno Gasai Bot'
@@ -25,7 +25,7 @@ global.lolkey = 'Papah-Chan' //biar mudah ngegantinya semisal apikeynya expired:
 global.zenzkey = 'BagasPrdn' //ganti jadi apikey lu kalau expired
 global.wm = 'ꜱʜɪʀᴏ ɪᴋᴀꜱᴀᴋɪ ʙᴏᴛ'
 global.watermark = wm
-global.wm2 = '                     「 𝚂𝙷𝙸𝚁𝙾-𝙼𝙳 あ⁩ 」'
+global.wm2 = '                     「 Subs Holer GTPS 」'
 global.wm3 = '𝚂𝙷𝙸𝚁𝙾-𝙼𝙳'
 global.htki = '––––––『' 
 global.htka = '』––––––'
@@ -35,9 +35,9 @@ global.wait = '_*tunggu sedang di proses...*_'
 global.eror = '_*Server Error*_'
 global.benar = 'Benar ✅\n'
 global.salah = 'Salah ❌\n'
-global.stiker_wait = 'Stiker sedang dibuat'
+global.stiker_wait = 'https://youtube.com/channel/UCTmcFqM5DUtRzVbkYr6pENA'
 global.packname = '2022'
-global.author = '© Hyzer Official'
+global.author = '© Holer GTPS'
 
 //=============『 Apikey 』================== //
 global.APIs = { // API Prefix
