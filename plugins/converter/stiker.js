@@ -8,12 +8,12 @@ var mime = (q.msg || q).mimetype || ''
 var mimeq = (q.msg || q)
 if (/image/.test(mime)) {
 var image = await client.downloadMediaMessage(mimeq)
-var encimage = await client.sendImageAsSticker(msg.from, image, msg, { packname: args[0] || Info.stickerpack, author: args[1] || Info.botName })
+var encimage = await client.sendImageAsSticker(msg.from, image, msg, { packname: args[0] || Info.sticker.packname, author: args[1] || Info.sticker.author })
 await fs.unlinkSync(encimage)
 } else if (/video/.test(mime)) {
 if (mimeq.seconds > 11) return msg.reply('🚩 Maksimal 10 detik!')
 var video = await client.downloadMediaMessage(mimeq)
-var encvideo = await client.sendVideoAsSticker(msg.from, video, msg, { packname: args[0] || Info.stickerpack, author: args[1] || Info.botName })
+var encvideo = await client.sendVideoAsSticker(msg.from, video, msg, { packname: args[0] || Info.sticker.packname, author: args[1] || Info.sticker.author })
 await fs.unlinkSync(encvideo)
 } else {
 msg.reply(`🚩 Kirim/reply gambar/video/gif dengan caption ${usedPrefix + command}\nDurasi Video/Gif 1-9 Detik`)
