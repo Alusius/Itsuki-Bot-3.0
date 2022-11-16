@@ -64,7 +64,7 @@ global.db.chain = _.chain(global.db.data)
 }
 loadDatabase()
 
-global.authFile = './system/connect/session.json'
+global.authFile = './global/session.json'
 global.isInit = !fs.existsSync(authFile)
 const { state, saveState } = useSingleFileAuthState(global.authFile)
 global.Info = JSON.parse(fs.readFileSync('./global/settings.json'))
