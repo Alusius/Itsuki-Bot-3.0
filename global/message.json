@@ -1,0 +1,13 @@
+{
+ "success": "✓ Success",
+ "regist": "Silahkan daftar terlebih dahulu sebelum menggunakan fitur ini dengan menggunakan #daftar nama.umur",
+ "restrict": "Fitur ini dinonaktifkan oleh owner.",
+ "admin": "Fitur Khusus Admin Group!",
+ "botAdmin": "Bot Harus Menjadi Admin Terlebih Dahulu!",
+ "owner": "Fitur Khusus Owner Bot",
+ "group": "Fitur Digunakan Hanya Untuk Group!",
+ "personal": "Fitur Digunakan Hanya Untuk Private Chat!",
+ "bot": "Fitur Khusus Pengguna Nomor Bot",
+ "wait": "Loading...",
+ "nsfw": "Akses nsfw belum di aktifkan pada chat ini, kamu dapat mengaktifkannya dengan mengetik #enable nsfw"
+}
