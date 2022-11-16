@@ -9,5 +9,9 @@
  "stickerpack": "WhatsApp Bot",
  "groupBot": "https://chat.whatsapp.com/IxBejqgYlXKENKPJsF7EOP",
  "logo": "乂",
- "liner": "◦"
+ "liner": "◦",
+ "sticker": {
+   "packname": "Sticker From",
+   "author": "Itsuki Nakano Bot"
+ }
 }
