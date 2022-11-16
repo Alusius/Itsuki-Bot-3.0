@@ -14,7 +14,7 @@ const P = require('pino')
 const os = require('os')
 const chalk = require('chalk')
 const sock = require('./system/socket')
-var low = require('lowdb')
+var low = require('./system/database/lowDB')
 const { Low, JSONFile } = low
 const mongoDB = require('./system/database/mongoDB')
 
