@@ -3,7 +3,7 @@
  "premium": ["6285771037880"],
  "botName": "Itsuki - Nakano",
  "botWm": "© Simple WhatsApp Bot By Hyzer Official",
- "me": "ITSUKI NAKANO WHATSAPP BOT",
+ "me": "Itsuki Nakano Whatsapp Bot",
  "gmail": "hyzerofficial86@gmail.com",
  "instagram": "https://instagram.com/sius_psrb",
  "stickerpack": "WhatsApp Bot",
@@ -13,5 +13,9 @@
  "sticker": {
    "packname": "Sticker From",
    "author": "Itsuki Nakano Bot"
+ },
+ "image": {
+   "menu": "https://telegra.ph/file/4d00acf1238238cd12c17.jpg",
+   "logo": "https://telegra.ph/file/803922ea6af1f187e14a8.jpg"
  }
 }
