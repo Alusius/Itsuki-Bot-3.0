@@ -1,9 +1,8 @@
-<div align="center">
+
+### HYZER MULTI DEVICE
 <img src="https://telegra.ph/file/e5ecb1a742e5a79e25951.jpg" alt="Hyzer Multi Device" width="300" />
 
-</p>
-<h1 align="center">Hyzer Official Bot</h1>
-
+[![JavaScript](https://img.shields.io/badge/JavaScript-d6cc0f?style=for-the-badge&logo=javascript&logoColor=white)](https://javascript.com) [![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 
 ## SETTINGS
 
@@ -32,18 +31,3 @@ Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/628
 [![Ilman](https://github.com/ilmanhdyt.png?size=100)](https://github.com/ilmanhdyt)
 [![Zackmans](https://github.com/zackmans.png?size=100)](https://github.com/zackmans)
 [![DikaArdnt](https://github.com/DikaArdnt.png?size=100)](https://github.com/DikaArdnt)
-
->
->
->
-</div>
-<p align="center">
-  <a href="https://github.com/Hyzerr"><img title="GitHub" src="https://img.shields.io/badge/Github-Hyzerr.svg?style=for-the-badge&logo=github" /></a>
-  <a href="httts://instagram.com/zexyds_"><img title="Instagram " src="https://img.shields.io/badge/Instagram-Hyzerr.svg?style=for-the-badge&logo=instagram" /></a>
-  <a href="https://youtube.com/channel/UCBtUyjfIclyuu7yXKS0dAMw"><img title="Youtube" src="https://img.shields.io/badge/Youtube-Hyzerr.svg?style=for-the-badge&logo=youtube" /></a>
-  <a href="https://api-hyzerr.herokuapp.com"><img title="Rest Api" src="https://img.shields.io/badge/Rest Api-Hyzerr.svg?style=for-the-badge&logo=twitter" /></a>
-  <h4 align="center">
-  <a
-  <a href="https://wa.me/62877688861483">Chat Saya Jika Ingin Menanyakan Sesuatu </a>
-</h4>
-</p>
