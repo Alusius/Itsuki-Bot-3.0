@@ -227,7 +227,7 @@ npmdesc: package.description,
 version: package.version
 }
 text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-var guf = await Func.getBuffer('https://telegra.ph/file/4d00acf1238238cd12c17.jpg')
+var guf = await Func.getBuffer(Info.image.menu)
 var buffer = await Func.resize(guf, 300, 150)
 var but = await Func.duaButton('.db','📚 Dashboard','.owner','👨🏻‍💻 Owner')
 var isOr = 'Ⓛ = Fitur memakai limit\nⓅ = Khusus pengguna premium'
