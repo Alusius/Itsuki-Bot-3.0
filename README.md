@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://telegra.ph/file/677780c08cc83059ac934.jpg" alt="Hyzer Md-V3" width="300" />
+<img src="https://telegra.ph/file/e5ecb1a742e5a79e25951.jpg" alt="Hyzer Multi Device" width="300" />
 
 </p>
 <h1 align="center">Hyzer Official Bot</h1>
@@ -15,7 +15,7 @@
   <a href="https://api-hyzerr.herokuapp.com"><img title="Rest Api" src="https://img.shields.io/badge/Rest Api-Hyzerr.svg?style=for-the-badge&logo=twitter" /></a>
   <h4 align="center">
   <a
-  <a href="https://wa.me/6287892711054">Chat Saya Jika Ingin Menanyakan Sesuatu </a>
+  <a href="https://wa.me/62877688861483">Chat Saya Jika Ingin Menanyakan Sesuatu </a>
 </h4>
 </p>
 
