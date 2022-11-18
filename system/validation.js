@@ -343,7 +343,7 @@ msg.exp += Math.ceil(Math.random() * 10)
 let usedPrefix
 const _user = global.db.data && global.db.data.users && global.db.data.users[msg.sender]
 
-// WHO 
+// Sebagai Apa
 const isOwner = [global.client.user.jid, ...Info.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
 const isPremium = isOwner || Info.premium.map(f => f.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
 const groupMetadata = msg.isGroup ? await client.groupMetadata(msg.from).catch(e => {}) : ''
@@ -353,6 +353,7 @@ const groupAdmins = msg.isGroup ? await Func.getGroupAdmins(participants) : ''
 const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false
 const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false
 
+// Ban Fitur Admin
 for (let name in global.plugins) {
 let plugin = global.plugins[name]
 if (!plugin) continue
@@ -362,6 +363,7 @@ this.reply(msg.from, Only.restrict, msg)
 continue
 }
 
+// Prefix && Read Command
 const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 const _prefix = plugin.customPrefix ? plugin.customPrefix : client.prefix ? client.prefix : global.prefix
 const match = (_prefix instanceof RegExp ?
@@ -408,13 +410,8 @@ plugin.command === command :
 false
 
 if (!isAccept) continue
-msg.plugin = name
-if (msg.from in global.db.data.chats || msg.sender in global.db.data.users) {
-let chat = global.db.data.chats[msg.from]
-if (name != 'unbanchat.js' && chat && chat.isBan) return // Except this
-if (name != 'unbanuser.js' && user && user.banned) return
-}
 
+// Mess
 if (plugin.owner && !isOwner) { 
 this.reply(msg.from, Only.owner, msg)
 continue
@@ -449,9 +446,13 @@ continue
 }
 
 msg.isCommand = true
+msg.plugin = name
+
+// Dashboard Hit
 if (msg.isCommand) {
 hitCmd(command, 1, hitBot)
 }
+
 let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
 if (xp > 200) msg.reply('Damn, so cool.') // Hehehe
 else msg.exp += xp
@@ -459,18 +460,26 @@ if (!isPremium && plugin.limit && global.db.data.users[msg.sender].limit < plugi
 this.reply(msg.from, `🚩 Limit anda habis, silahkan beli melalui *${usedPrefix}buy* atau bergabung menjadi anggota premium bot melalui *${usedPrefix}daftarpremium*`, msg)
 continue 
 }
+
+// Sesuai Level
 if (plugin.level > _user.level) {
-this.reply(msg.from, `🚩 Diperlukan level *${plugin.level}* untuk menggunakan perintah ini. Level kamu *${_user.level}*`, msg)
+this.reply(msg.from, `🚩 Diperlukan level *${plugin.level}* untuk menggunakan perintah ini.
+
+• Levelmu : [ *${_user.level}* ]`, msg)
 continue 
 }
+
+// Group Only
 if (msg.isCommand && !isPremium && !msg.isGroup && db.data.settings[botNumber].groupOnly) {
-this.sendOrder(msg.from, fs.readFileSync('./global/media/logo.jpg'), '100', '20', 'ITSUKI-NAKANO WHATSAPP BOT', `
+var bufGc = await Func.getBuffer(Info.image.logo)
+this.sendOrder(msg.from, bufGc, '1000', '200', Info.me, `
 *Mode : Group Only*
 
 Hi kak ${msg.pushName}, bot sedang dalam mode hanya group. Tidak dapat menggunakan bot di pesan pribadi. Silahkan upgrade ke premium untuk menggunakan bot di pesan pribadi ketika dalam mode group only dengan command *#daftarprem*, atau join group official kami untuk menggunakan bot.\n\n${Info.groupBot}
 `.trim(), msg)
 continue
 }
+
 let extra = {
 match,
 usedPrefix,
@@ -522,12 +531,21 @@ if (msg.sender && (user = global.db.data.users[msg.sender])) {
 user.exp += msg.exp
 user.limit -= msg.limit * 1
 }
+
+// Autoread chat dan sw
+if (db.data.settings[botNumber].autoread) {
+if (msg.key.remoteJid === 'status@broadcast') {
+this.readMessages([msg.key]).then(_=> { console.log(`Read Sw : ${msg.name}`) })
+}
 this.readMessages([msg.key])
+}
+
+// Console By Me
 if (msg.isCommand) {
 console.log(chalk.keyword('cyan')(`[ ${msg.isGroup ? 'GROUP CHAT' : 'PERSONAL CHAT'} ]`), chalk.bold.rgb(239, 225, 3)(`${chalk.rgb(255, 255, 255)(new Date())}`), chalk.keyword('cyan')(`\n=> Dari ${msg.pushName}, ${msg.isGroup ? msg.from : msg.sender}`), chalk.bold.rgb(239, 225, 3)(`${chalk.rgb(255, 255, 255)(`\n=> ${msg.text || msg.mtype}\n---------------------------------------------------`)}`))
 }
 
-// Made By Hyzer Official, Silahkan Pakai 😇
+// Menfess Made By Hyzer Official, Silahkan Pakai 😇
 if (msg.message && !msg.isCommand) {
 this.menfess = this.menfess ? this.menfess : {}
 if (this.menfess[msg.sender].id != 0 && msg.quoted.footerText == '_Menfess - Whatsapp Bot_') {
@@ -537,73 +555,6 @@ this.reply(msg.from, "🚩 Berhasil mengirim balasan.", msg)
 await Func.sleep(750)
 delete this.menfess[msg.sender]
 }
-}
-
-if (msg.message && !msg.isBaileys) {
-if (!(msg.message.buttonsResponseMessage || msg.message.templateButtonReplyMessage || msg.message.listResponseMessage)) return
-let id = msg.message.buttonsResponseMessage?.selectedButtonId || msg.message.templateButtonReplyMessage?.selectedId || msg.message.listResponseMessage?.singleSelectReply.selectedRowId
-let text = msg.message.buttonsResponseMessage?.selectedDisplayText || msg.message.templateButtonReplyMessage?.selectedDisplayText || msg.message.listResponseMessage?.description
-let isIdMessage = false, usedPrefix
-for (let name in global.plugins) {
-let plugin = global.plugins[name]
-if (!plugin) continue
-if (plugin.disabled) continue
-if (!opts['restrict']) if (plugin.tags && plugin.tags.includes('admin')) continue
-if (typeof plugin !== 'function') continue
-if (!plugin.command) continue
-const str2Regex = str => str.replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
-let _prefix = plugin.customPrefix ? plugin.customPrefix : this.prefix ? this.prefix : global.prefix
-let match = (_prefix instanceof RegExp ? // RegExp Mode?
-[[_prefix.exec(id), _prefix]] :
-Array.isArray(_prefix) ? // Array?
-_prefix.map(p => {
-let re = p instanceof RegExp ? // RegExp in Array?
-p :
-new RegExp(str2Regex(p))
-return [re.exec(id), re]
-}) :
-typeof _prefix === 'string' ? // String?
-[[new RegExp(str2Regex(_prefix)).exec(id), new RegExp(str2Regex(_prefix))]] :
-[[[], new RegExp]]
-).find(p => p[1])
-if ((usedPrefix = (match[0] || '')[0])) {
-let noPrefix = id.replace(usedPrefix, '')
-let [command, ...args] = noPrefix.trim().split` `.filter(v => v)
-command = (command || '').toLowerCase()
-let isId = plugin.command instanceof RegExp ? // RegExp Mode?
-plugin.command.test(command) :
-Array.isArray(plugin.command) ? // Array?
-plugin.command.some(cmd => cmd instanceof RegExp ? // RegExp in Array?
-cmd.test(command) :
-cmd === command
-) :
-typeof plugin.command === 'string' ? // String?
-plugin.command === command :
-false
-if (!isId) continue
-console.log({ name, command: plugin.command, text: id })
-isIdMessage = true
-}
-
-}
-let messages = await generateWAMessage(msg.from, { text: isIdMessage ? id : text, mentions: msg.mentionedJid }, {
-userJid: this.user.id,
-quoted: msg.quoted && msg.quoted.fakeObj
-})
-messages.key.fromMe = areJidsSameUser(msg.sender, this.user.id)
-messages.key.id = msg.key.id
-messages.pushName = msg.name
-if (msg.isGroup) messages.participant = msg.sender
-let misf = {
-...chatUpdate,
-messages: [proto.WebMessageInfo.fromObject(messages)],
-type: 'append'
-}
-this.ev.emit('messages.upsert', misf)
-}
-
-if (msg.key.remoteJid === 'status@broadcast' && db.data.settings[botNumber].autoread) {
-this.readMessages([msg.key]).then(_=> { console.log(`Read Sw : ${msg.name}`) })
 }
 
 }
