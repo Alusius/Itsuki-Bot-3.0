@@ -3,7 +3,7 @@ var handler = async (msg, {
 client 
 }) => {
 var buton = await Func.duaButton('.weekly', 'Weekly', '.hourly', 'Hourly')
-var buffer = fs.readFileSync('./global/media/rpg/' + Func.pickRandom(['1','2','3']) + '.jpg')
+var buffer = fs.readFileSync('./global/media/rpg/' + Func.pickRandom(['1','2','3','4','5','6','7','8','9','10','11']) + '.jpg')
 var buf = await Func.resize(buffer, 300, 300)
 var luka = Func.pickRandom(['memakan buah beracun','jatuh ke sungai','dililit ular','terkena dahan pohon besar','memijak kaca','ditelan bumi','kurang ganteng','jatuh jurang','tenggelam di sungai','ditimpa pohon','makan makanan beracun','disengat lebah','dipatok ular','diburu orang pedalaman']) // gw g ad ide ajg
 var ketiga = Func.pickRandom(['Berhasil menembaki hewan buruan...','Hewan buruan berhasil masuk perangkapmu..','Duarr, Duarr, mencoba terus menembaki hewan buruan.....','Kpummnn, kpummnn, menembaki hewan buruan..']) // tambahin sendiri 
