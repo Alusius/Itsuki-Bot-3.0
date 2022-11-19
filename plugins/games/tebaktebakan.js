@@ -12,7 +12,7 @@ var but = await Func.satuButton('.tekod','Bantuan')
 client.tebaktebakan[msg.from] = [
 await client.reply(msg.from, `*乂  T E B A K - T E B A K A N*
 
-Soal ${v.soal}
+${v.soal}
 
 Timeout : *[ ${(120000 / 1000).toFixed(2)} Detik ]*
 Ketik ${usedPrefix}tekod untuk bantuan.
