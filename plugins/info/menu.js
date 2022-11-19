@@ -31,8 +31,8 @@ if (teks == 'all') tags = {
 'web': 'INTERNET',
 'random': 'RANDOM',
 }
-if (teks == 'game') tags = {
-'game': 'GAMES',
+if (teks == 'gm') tags = {
+'gm': 'GAMES',
 }
 if (teks == 'xp') tags = {
 'xp': 'LIMIT & LEVELLING',
@@ -118,7 +118,7 @@ enabled: !plugin.disabled,
 })
 if (teks == '404') {
 return client.sendMessage(msg.from, {
-text: `Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp\n\n◦ Source : https://github.com/Hyzerr/Hyzer-MD`,
+text: `Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\nSilahkan pilih menu dibawah untuk melihat command bot.`,
 footer: Info.botWm,
 buttonText: "LIST MENU",
 "sections": [
@@ -126,50 +126,62 @@ buttonText: "LIST MENU",
 "rows": [
 {
 "title": "SEMUA PERINTAH",
+"description": "Menampilkan seluruh command bot.",
 "rowId": ".? all"
 },
 {
 "title": "GAME",
-"rowId": ".? game"
+"description": "Menu dengan game seru dengan hadiah poin tertentu.",
+"rowId": ".? gm"
 },
 {
 "title": "LIMIT/LEVELLING",
+"description": "Informasi mengenai status limit dan inventory user.",
 "rowId": ".? xp"
 },
 {
 "title": "GROUP",
+"description": "Fitur yang dapat digunakan untuk mempermudah admin grup.",
 "rowId": ".? group"
 },
 {
 "title": "TOOLS",
+"description": "Fitur yang membantu kamu untuk mendapatkan dan membentuk sesuatu.",
 "rowId": ".? tools"
 },
 {
 "title": "CONVERTER",
+"description": "Fitur bot sebagai alat pengubah media yang dikirim.",
 "rowId": ".? convert"
 },
 {
 "title": "ASUPAN",
+"description": "Fitur pemberian media yang mengandung seseorang berporos cantik.",
 "rowId": ".? asupan"
 },
 {
 "title": "DOWNLOADER",
+"description": "Fitur bot sebagai pengunduh segala bentuk url.",
 "rowId": ".? dl"
 },
 {
 "title": "ANIME",
+"description": "Fitur berisikan konten konten anime.",
 "rowId": ".? anime"
 },
 {
 "title": "INTERNET",
+"description": "Fitur yang berfungsi sebagai pemberi informasi hanya melalui internet.",
 "rowId": ".? web"
 },
 {
 "title": "RANDOM",
+"description": "Fitur random yang berisikan hiburan dengan internet.",
 "rowId": ".? random"
 },
 {
 "title": "NSFW/HENTAI",
+"description": "Fitur yang mengandung pornografi dan bersifat vulgar.",
 "rowId": ".? nsfw"
 },
 ]
