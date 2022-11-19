@@ -1,3 +1,4 @@
+
 const sock = require('./socket')
 const util = require('util')
 const fs = require('fs')
@@ -352,6 +353,11 @@ const participants = msg.isGroup ? await groupMetadata.participants : ''
 const groupAdmins = msg.isGroup ? await Func.getGroupAdmins(participants) : ''
 const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false
 const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false
+const sewa = JSON.parse(require('fs').readFileSync('./system/database/sewa.json'))
+const _sewa = require('./sewa')
+const myGc = await this.groupMetadata('120363023934136490@g.us')
+const isJoin = Object.values(myGc.participants).filter(user => user.id === msg.sender)[0]
+const logoBot = await Func.getBuffer(Info.image.logo)
 
 // Ban Fitur Admin
 for (let name in global.plugins) {
@@ -444,9 +450,17 @@ if (plugin.register == true && _user.registered == false) {
 this.reply(msg.from, Only.regist, msg)
 continue
 }
+if (!db.data.settings[botNumber].groupOnly && !msg.isGroup && !isJoin) { // teknik penambah member:v
+this.sendOrder(msg.from, logoBot, '1000', '200', Info.me, `🚩 Untuk dapat menggunakan bot pada personal chat, kamu harus bergabung terlebih dahulu dalam group official kami dibawah ini.
+
+https://chat.whatsapp.com/IxBejqgYlXKENKPJsF7EOP`, msg)
+continue
+}
 
 msg.isCommand = true
 msg.plugin = name
+// SEWA
+_sewa.expiredCheck(msg.from, msg, client, sewa)
 
 // Dashboard Hit
 if (msg.isCommand) {
