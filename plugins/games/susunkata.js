@@ -12,8 +12,8 @@ var but = await Func.satuButton('.sunkes','Bantuan')
 client.susunkata[msg.from] = [
 await client.reply(msg.from, `*乂  S U S U N - K A T A*
 
-Soal ${v.soal}
-Tipe ${v.tipe}
+*Soal :* ${v.soal}
+*Tipe :* ${v.tipe}
 
 Timeout : *[ ${(120000 / 1000).toFixed(2)} Detik ]*
 Ketik ${usedPrefix}sunkes untuk bantuan.
