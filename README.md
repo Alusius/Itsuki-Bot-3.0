@@ -1,5 +1,5 @@
 
-### HYZER MULTI DEVICE
+### HYZER MULTI DEVICE 
 <img src="https://telegra.ph/file/e5ecb1a742e5a79e25951.jpg" alt="Hyzer Multi Device" width="300" />
 
 [![JavaScript](https://img.shields.io/badge/JavaScript-d6cc0f?style=for-the-badge&logo=javascript&logoColor=white)](https://javascript.com) [![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -11,7 +11,7 @@ Isi semua informasi bot di file [`settings.json`](https://github.com/Hyzerr/Hyze
 ## ITSUKI BOT ROOM
 [![WHATSAPP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/IxBejqgYlXKENKPJsF7EOP) 
 
-# TERMUX USER
+## TERMUX USER
 ```bash
 $ pkg upgrade && pkg update
 $ pkg install nodejs
