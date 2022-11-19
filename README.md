@@ -11,6 +11,22 @@ Isi semua informasi bot di file [`settings.json`](https://github.com/Hyzerr/Hyze
 ## ITSUKI BOT ROOM
 [![WHATSAPP](https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://chat.whatsapp.com/IxBejqgYlXKENKPJsF7EOP) 
 
+# TERMUX USER
+```bash
+$ pkg upgrade && pkg update
+$ pkg install nodejs
+$ pkg install ffmpeg
+$ pkg install libwebp
+$ pkg install imagemagick
+$ pkg install git
+$ pkg install yarn
+$ gitclone https://github.com/Hyzer/Hyzer-MD
+$ cd Hyzer-MD
+$ yarn
+$ rm -rf global/session.json
+$ node .
+```
+
 ## CONNECT
 
 Jika sudah ada session, isi di file [`session.json`](https://github.com/Hyzerr/Hyzer-MD-V4/blob/main/system/connect/session.json)<br />
