@@ -6,7 +6,7 @@ var handler = async(msg, {
 client, args, usedPrefix, command 
 }) => {
 if (command == 'addsewa') {
-if (!args[0]) return msg.reply(`🚩 Masukkan durasi waktu sewa\n\n*Contoh :* ${usedPrefix+command} 1d\n\n*DESK*\n• h, hour = jam\n• d, day = hari\n• m, month = bulan\n• y, year = tahun`)
+if (!args[0]) return msg.reply(`🚩 Masukkan durasi waktu sewa\n\n*Contoh :* ${usedPrefix+command} 1d\n\n*DESK*\n• m, minute = menit\n• h, hour = jam\n• d, day = hari\n• w, week = bulan\n• y, year = tahun`)
 addSewaGroup(msg.from, args[0], sewa)
 msg.reply(`🚩 Berhasil menambah expired sewa bot kedalam chat ini dengan durasi ${args[0]}`)
 }
