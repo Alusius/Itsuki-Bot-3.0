@@ -8,7 +8,7 @@ var c = await Func.pickRandom(b)
 client.sendImage(msg.from, c, 'Random wallpaper anime.', msg, { isUrl: true })
 }
 handler.help = ['wallpaperanime']
-handler.tags = ['web']
+handler.tags = ['anime']
 handler.command = /^(wallpaperanime|animewallpaper)$/i
 
 module.exports = handler
