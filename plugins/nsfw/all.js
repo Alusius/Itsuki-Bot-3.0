@@ -13,5 +13,3 @@ handler.tags = ['nsfw']
 handler.nsfw = true
 
 module.exports = handler
-
-// tambah sendiri adReplynya kalau mau
