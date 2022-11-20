@@ -1,6 +1,7 @@
 var handler = async(msg, { 
 client 
 }) => {
+var user = db.data.users[msg.sender]
 if (user.money > 499999999) { 
 await msg.reply('🚩 Berhasil menjadi anggota premium bot secara permanen, ketik *#premium* untuk mengetahui apa itu anggota premium dan keuntungannya.')
 user.money -= 500000000 * 1
