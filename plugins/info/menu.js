@@ -118,7 +118,7 @@ enabled: !plugin.disabled,
 })
 if (teks == '404') {
 return client.sendMessage(msg.from, {
-text: `Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.\nSilahkan pilih menu dibawah untuk melihat command bot.`,
+text: `Sistem otomatis (WhatsApp Bot) yang dapat membantu untuk melakukan sesuatu, mencari dan mendapatkan data/informasi hanya melalui WhatsApp.`,
 footer: Info.botWm,
 buttonText: "LIST MENU",
 "sections": [
