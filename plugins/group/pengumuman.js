@@ -1,7 +1,7 @@
 var handler = async(msg, { 
 client, text, participants }) => {
 var teks = `*乂 P E N G U M U M A N*
-\n *${text ? text : msg.quoted.text ? msg.quoted.text : 'Tidak ada'}*\n\n` // isilah atmin tomlol:v
+\n ${text != 'undefined' ? text : msg.quoted.text == 'undefined'? msg.quoted.text : 'Tidak ada'}\n\n` // isilah atmin tomlol:v
 for (let mem of participants) {
 teks += `  ◦ @${mem.id.split('@')[0]}\n`
 }
