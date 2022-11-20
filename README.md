@@ -49,3 +49,4 @@ Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/628
 [![DikaArdnt](https://github.com/DikaArdnt.png?size=100)](https://github.com/DikaArdnt)
 [![Fadly Id](https://github.com/xdlyy404.png?size=100)](https://github.com/xdlyy404)
 [![X-Far](https://github.com/xfar05.png?size=100)](https://github.com/xfar05)
+[![Caliph](https://github.com/caliphdev.png?size=100)](https://github.com/caliphdev)
