@@ -1,7 +1,7 @@
 var handler = async(msg, { 
 client, text, participants 
 }) => {
-client.reply(msg.from, text ? text : msg.quoted.text ? msg.quoted.text : ' ', msg, { mentions: participants.map(a => a.id)})
+client.reply(msg.from, text == 'undefined' ? text : msg.quoted.text == 'undefined' ? msg.quoted.text : ' ', msg, { mentions: participants.map(a => a.id)})
 }
 handler.help = ['hidetag <pesan>']
 handler.tags = ['group']
