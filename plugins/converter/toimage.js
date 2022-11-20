@@ -10,7 +10,7 @@ var out = Buffer.alloc(0)
 if (/webp/.test(mime)) {
 out = await webp2png(media)
 }
-await client.sendImage(msg.from, out, '*Success convert to image.*', msg, { isUrl: true })
+await client.sendImage(msg.from, out, 'Success convert to image.', msg, { isUrl: true })
 }
 handler.help = ['toimg','toimage'].map(v => v + ' <reply>')
 handler.tags = ['convert']
