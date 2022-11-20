@@ -2,7 +2,6 @@ var fetch = require('node-fetch')
 var handler = async (msg, { 
 client, command 
 }) => {
-msg.reply(Only.wait)
 var bufer = await fetch('https://raw.githubusercontent.com/Hyzerr/Database/master/Database/Nsfw/' + command + '.json')
 var buf = await bufer.json()
 var res = await Func.pickRandom(buf)
