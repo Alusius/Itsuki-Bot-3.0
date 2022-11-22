@@ -27,3 +27,5 @@ handler.tags = ['info']
 handler.command = /^(listgc|listgrup|listgroup|gruplist|grouplist|gclist)$/i
 
 module.exports = handler
+
+// id untuk owner sama user beda 🗿
