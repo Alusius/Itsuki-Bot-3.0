@@ -7,9 +7,9 @@ for (let i of grup) {
 const data = await client.groupMetadata(i)
 let isMem = data.participants
 let isAtmin = (data.participants).filter(v => v.admin == 'admin')
-let isOwner = (data.participants).filter(v => v.admin == 'superadmin')
+let isPemilik = (data.participants).filter(v => v.admin == 'superadmin')
 lis.push({
-title: data.subject, rowId: `${isOwner ? '.leave': '.gcmetadata'} ${data.id}`, description: `${isMem.length} Member || ${isAtmin.length + isOwner.length} Admin`})
+title: data.subject, rowId: `${isOwner ? '.leave': '.gcmetadata'} ${data.id}`, description: `${isMem.length} Member || ${isAtmin.length + isPemilik.length} Admin`})
 }
 let sections = [{
 title: "LIST CHAT GROUP BOT",
