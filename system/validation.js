@@ -462,7 +462,7 @@ msg.plugin = name
 _sewa.expiredCheck(msg.from, msg, client, sewa)
 
 // Dashboard Hit
-if (msg.isCommand) {
+if (msg.isCommand && msg.plugin != 'eval.js' && msg.plugin != 'exec.js') { // kecuali eval, biar g masuk hit
 hitCmd(command, 1, hitBot)
 }
 
@@ -518,7 +518,7 @@ if (!isPremium) msg.limit = msg.limit || plugin.limit || false
 msg.error = e
 console.error(e)
 if (e) {
-this.sendMessage(Info.owner[0] + '@s.whatsapp.net', { text: util.format(e) }, { quoted:msg })
+Info.owner.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: util.format(e) }, { quoted:msg }))
 }
 } finally {
 // msg.reply(util.format(_user))
