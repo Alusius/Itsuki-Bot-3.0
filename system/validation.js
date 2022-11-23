@@ -286,6 +286,8 @@ if (!('autodl' in chat)) chat.autodl = false
 if (!('toxic' in chat)) chat.toxic = false
 if (!('once' in chat)) chat.once = false
 if (!('nsfw' in chat)) chat.nsfw = false
+if (!('sewa' in chat)) chat.sewa = false
+if (!isNumber(chat.expired)) chat.expired = 0
 } else global.db.data.chats[msg.from] = {
 isBan: false,
 welcome: true,
@@ -296,6 +298,8 @@ autodl: false,
 toxic: false,
 once: false, 
 nsfw: false, 
+sewa: false,
+expires: 0,
 }
 
 let settings = global.db.data.settings[botNumber]
@@ -352,9 +356,7 @@ const participants = msg.isGroup ? await groupMetadata.participants : ''
 const groupAdmins = msg.isGroup ? await Func.getGroupAdmins(participants) : ''
 const isBotAdmins = msg.isGroup ? groupAdmins.includes(botNumber) : false
 const isAdmins = msg.isGroup ? groupAdmins.includes(msg.sender) : false
-const sewa = JSON.parse(require('fs').readFileSync('./system/database/sewa.json'))
-const _sewa = require('./sewa')
-const myGc = await this.groupMetadata('120363023934136490@g.us')
+const myGc = await this.groupMetadata(Info.group.id)
 const isJoin = Object.values(myGc.participants).filter(user => user.id === msg.sender)[0]
 const logoBot = await Func.getBuffer(Info.image.logo)
 
@@ -452,14 +454,12 @@ continue
 if (!db.data.settings[botNumber].groupOnly && !msg.isGroup && !isJoin) { // teknik penambah member:v
 this.sendOrder(msg.from, logoBot, '1000', '200', Info.me, `🚩 Untuk dapat menggunakan bot pada personal chat, kamu harus bergabung terlebih dahulu dalam group official kami dibawah ini.
 
-https://chat.whatsapp.com/IxBejqgYlXKENKPJsF7EOP`, msg)
+${Info.group.link}`, msg)
 continue
 }
 
 msg.isCommand = true
 msg.plugin = name
-// SEWA
-_sewa.expiredCheck(msg.from, msg, client, sewa)
 
 // Dashboard Hit
 if (msg.isCommand && msg.plugin != 'eval.js' && msg.plugin != 'exec.js') { // kecuali eval, biar g masuk hit
@@ -518,7 +518,14 @@ if (!isPremium) msg.limit = msg.limit || plugin.limit || false
 msg.error = e
 console.error(e)
 if (e) {
-Info.owner.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: util.format(e) }, { quoted:msg }))
+let ingfoerror = `📁 *Plugin :* ${msg.plugin}
+💬 *Chat :* ${msg.isGroup ? `${msg.chat} [ GROUP ]` : '@' + msg.sender.split('@')[0]}
+✍️ *Command :* ${msg.text}
+
+*⚙️ Error Log :* 
+\`\`\`util.format(e)\`\`\`
+`.trim()
+Info.owner.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: ingfoerror, mentions: this.parseMention(ingfoerror)}, { quoted:msg }))
 }
 } finally {
 // msg.reply(util.format(_user))
