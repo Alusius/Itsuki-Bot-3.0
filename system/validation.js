@@ -11,7 +11,7 @@ global.botNumber = await this.decodeJid(this.user.id)
 global.Only = JSON.parse(fs.readFileSync('./global/message.json'))
 global.hitCmd = require("./database/dashboard.js").addCmd
 global.hitBot = JSON.parse(fs.readFileSync('./system/database/dashboard.json'))
-global.wm = `${Info.botName} || ${Object.keys(db.data.users).length} User`
+global.wm = `${Info.bot.name} || ${Object.keys(db.data.users).length} User`
 
 if (global.db.data == null) await loadDatabase()
 this.msgqueque = this.msgqueque || []
@@ -348,8 +348,8 @@ let usedPrefix
 const _user = global.db.data && global.db.data.users && global.db.data.users[msg.sender]
 
 // Sebagai Apa
-const isOwner = [global.client.user.jid, ...Info.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
-const isPremium = isOwner || Info.premium.map(f => f.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
+const isOwner = [global.client.user.jid, ...Info.owner.number].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
+const isPremium = isOwner || Info.bot.premium.map(f => f.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(msg.sender)
 const groupMetadata = msg.isGroup ? await client.groupMetadata(msg.from).catch(e => {}) : ''
 const groupName = msg.isGroup ? groupMetadata.subject : ''
 const participants = msg.isGroup ? await groupMetadata.participants : ''
@@ -452,7 +452,7 @@ this.reply(msg.from, Only.regist, msg)
 continue
 }
 if (!db.data.settings[botNumber].groupOnly && !msg.isGroup && !isJoin) { // teknik penambah member:v
-this.sendOrder(msg.from, logoBot, '1000', '200', Info.me, `🚩 Untuk dapat menggunakan bot pada personal chat, kamu harus bergabung terlebih dahulu dalam group official kami dibawah ini.
+this.sendOrder(msg.from, logoBot, '1000', '200', Info.bot.about, `🚩 Untuk dapat menggunakan bot pada personal chat, kamu harus bergabung terlebih dahulu dalam group official kami dibawah ini.
 
 ${Info.group.link}`, msg)
 continue
@@ -485,10 +485,10 @@ continue
 // Group Only
 if (msg.isCommand && !isPremium && !msg.isGroup && db.data.settings[botNumber].groupOnly) {
 var bufGc = await Func.getBuffer(Info.image.logo)
-this.sendOrder(msg.from, bufGc, '1000', '200', Info.me, `
+this.sendOrder(msg.from, bufGc, '1000', '200', Info.bot.about, `
 *Mode : Group Only*
 
-Hi kak ${msg.pushName}, bot sedang dalam mode hanya group. Tidak dapat menggunakan bot di pesan pribadi. Silahkan upgrade ke premium untuk menggunakan bot di pesan pribadi ketika dalam mode group only dengan command *#daftarprem*, atau join group official kami untuk menggunakan bot.\n\n${Info.groupBot}
+Hi kak ${msg.pushName}, bot sedang dalam mode hanya group. Tidak dapat menggunakan bot di pesan pribadi. Silahkan upgrade ke premium untuk menggunakan bot di pesan pribadi ketika dalam mode group only dengan command *#daftarprem*, atau join group official kami untuk menggunakan bot.\n\n${Info.group.link}
 `.trim(), msg)
 continue
 }
@@ -525,7 +525,7 @@ let ingfoerror = `📁 *Plugin :* ${msg.plugin}
 *⚙️ Error Log :* 
 \`\`\`${util.format(e)}\`\`\`
 `.trim()
-Info.owner.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: ingfoerror, mentions: this.parseMention(ingfoerror)}, { quoted:msg }))
+Info.owner.number.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: ingfoerror, mentions: this.parseMention(ingfoerror)}, { quoted:msg }))
 }
 } finally {
 // msg.reply(util.format(_user))
