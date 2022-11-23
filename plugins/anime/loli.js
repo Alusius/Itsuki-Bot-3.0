@@ -1,7 +1,7 @@
 var fetch = require('node-fetch')
 
 var handler = async(msg, { 
-client,
+client
 }) => {
 var buton = await Func.satuButton(`.loli`, 'NEXT')
 var imge = await fetch('https://raw.githubusercontent.com/Hyzerr/Database/master/Database/Anime/loli.json')
