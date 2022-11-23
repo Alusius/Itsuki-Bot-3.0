@@ -1,6 +1,7 @@
 var handler = async(msg, { 
 client 
 }) => {
+var user = db.data.users[msg.sender]
 var teks = `*乂  L I M I T  &  M O N E Y*
 
   *◦ Limit :* ${user.limit}
