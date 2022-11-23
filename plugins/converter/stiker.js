@@ -12,7 +12,7 @@ var image = await client.downloadMediaMessage(qmsg)
 var encimage = await client.sendImageAsSticker(msg.from, image, msg, { packname: args[0] || Info.sticker.packname, author: args[1] || Info.sticker.author })
 await fs.unlinkSync(encimage)
 } else if (/video/.test(mime)) {
-if (mimeq.seconds > 11) return msg.reply('🚩 Maksimal 10 detik!')
+if (mime.seconds > 11) return msg.reply('🚩 Maksimal 10 detik!')
 var video = await client.downloadMediaMessage(qmsg)
 var encvideo = await client.sendVideoAsSticker(msg.from, video, msg, { packname: args[0] || Info.sticker.packname, author: args[1] || Info.sticker.author })
 await fs.unlinkSync(encvideo)
