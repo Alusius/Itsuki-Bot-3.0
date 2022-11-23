@@ -16,9 +16,7 @@ title: "LIST BERITA CNN NEWS HARI INI",
 rows: listBerita
 }]
 const listMessage = {
-text: '🚩 Berikut adalah berita lainnya pada hari ini, pilih berita yang ingin dibaca disini.',
-footer: Info.botWm,
-title: `*乂 C N N  -  H A R I  I N I*\n`,
+text: 'Berikut adalah berita lainnya pada hari ini, pilih berita yang ingin dibaca disini.',
 buttonText: "CNN TODAY",
 sections
 }
