@@ -17,9 +17,7 @@ title: "Hasil Keseluruhan Dari " + text,
 rows: listAlpha
 }]
 const listMessage = {
-text: '🚩 Berikut adalah hasil lainnya secara keseluruhan, pilih gambar yang ingin diunduh disini.',
-footer: Info.botWm,
-title: `*乂 R E S U L T  -  A L P H A C O D E R S*\n`,
+text: 'Berikut adalah hasil lainnya secara keseluruhan, pilih gambar yang ingin diunduh disini.',
 buttonText: "Hasil keseluruhan dari " + text,
 sections
 }
