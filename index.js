@@ -28,7 +28,6 @@ function start(file) {
   })
   var p = cluster.fork()
   p.on('message', data => {
-    console.log('[❗] Menerima Data : ', data)
     switch (data) {
       case 'reset':
         p.kill()
@@ -42,7 +41,6 @@ function start(file) {
   })
   p.on('exit', code => {
     isRunning = false
-    console.error('[❗] Exited With Code:', code)
     if (code === 0) return
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0])
