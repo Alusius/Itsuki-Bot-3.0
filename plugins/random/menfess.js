@@ -40,7 +40,7 @@ msg.reply('*🚩 Terjadi kesalahan.*')
 }
 }
 handler.tags = ['random']
-handler.help = ['menfess', 'mf', 'menfes'].map(v => v + ' <nomor|nama pengirim|pesan>')
+handler.help = ['menfess', 'mf', 'menfes']
 handler.command = /^(mf|menfess|menfes)$/i
 
 handler.private = true
