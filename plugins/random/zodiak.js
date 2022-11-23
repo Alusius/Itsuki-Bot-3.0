@@ -19,7 +19,7 @@ Ultah Mendatang : ${birthday.join('-')}
 Usia : ${cekusia}
 Zodiak : ${zodiac}
 `.trim()
-    msg.reply(teks)
+    client.sendMessage(msg.from, { text: teks }, { quoted: msg })
 }
 handler.help = ['zodiac']
 handler.tags = ['random']
