@@ -523,7 +523,7 @@ let ingfoerror = `📁 *Plugin :* ${msg.plugin}
 ✍️ *Command :* ${msg.text}
 
 *⚙️ Error Log :* 
-\`\`\`util.format(e)\`\`\`
+\`\`\`${util.format(e)}\`\`\`
 `.trim()
 Info.owner.map(v => this.sendMessage(v + '@s.whatsapp.net', { text: ingfoerror, mentions: this.parseMention(ingfoerror)}, { quoted:msg }))
 }
