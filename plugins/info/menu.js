@@ -16,12 +16,13 @@ client, usedPrefix: _p, args, command
 }) => {
 var tags
 var teks = `${args[0]}`.toLowerCase()
-let arrayMenu = ['all','gm','xp','group','tools','convert','asupan','dl','nsfw','anime','web','random']
+let arrayMenu = ['all','gm','xp','group','religi','tools','convert','asupan','dl','nsfw','anime','web','random']
 if (!arrayMenu.includes(teks)) teks = '404'
 if (teks == 'all') tags = {
 'gm': 'GAMES',
 'xp': 'LIMIT & LEVELLING',
 'group': 'GROUP',
+'religi': 'RELIGI MENU',
 'tools': 'TOOLS',
 'convert': 'CONVERTER',
 'asupan': 'ASUPAN',
@@ -39,6 +40,9 @@ if (teks == 'xp') tags = {
 }
 if (teks == 'group') tags = {
 'group': 'GROUP',
+}
+if (teks == 'religi') tags = {
+'religi': 'RELIGI',
 }
 if (teks == 'tools') tags = {
 'tools': 'TOOLS',
@@ -142,6 +146,11 @@ buttonText: "LIST MENU",
 "title": "GROUP",
 "description": "Fitur yang dapat digunakan untuk mempermudah admin grup.",
 "rowId": ".? group"
+},
+{
+"title": "RELIGI",
+"description": "Fitur yang dapat digunakan untuk memperdalam iman kamu.",
+"rowId": ".? religi"
 },
 {
 "title": "TOOLS",
