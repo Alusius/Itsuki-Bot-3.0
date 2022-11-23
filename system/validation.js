@@ -519,7 +519,7 @@ msg.error = e
 console.error(e)
 if (e) {
 let ingfoerror = `📁 *Plugin :* ${msg.plugin}
-💬 *Chat :* ${msg.isGroup ? `${msg.chat} [ GROUP ]` : '@' + msg.sender.split('@')[0]}
+💬 *Chat :* ${msg.isGroup ? `${msg.from} [ GROUP ]` : '@' + msg.sender.split('@')[0]}
 ✍️ *Command :* ${msg.text}
 
 *⚙️ Error Log :* 
