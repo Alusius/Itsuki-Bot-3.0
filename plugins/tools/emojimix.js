@@ -5,7 +5,7 @@ if (!text) return msg.reply(`🚩 Gunakan format ${usedPrefix + command} emoji1+
 var [emo1, emo2] = text.split`+`
 try {
 Func.fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emo1)}_${encodeURIComponent(emo2)}`).then(async v => { 
-client.sendImageAsSticker(msg.from, v.results[0].url, msg, { packname: Info.stickerpack, author: `ig : ${Info.instagram}` })
+client.sendImageAsSticker(msg.from, v.results[0].url, msg, { packname: Info.sticker.packname, author: Info.sticker.author })
 })
 } catch {
 msg.reply('🚩 Emoji Invalid.')
