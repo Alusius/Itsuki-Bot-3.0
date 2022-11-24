@@ -10,7 +10,6 @@ const FormData = require("form-data");
 const chalk = require('chalk')
 const qs = require("qs")
 const url = require('url')
-const creator = 'Zynfinity / Fajar'
 const { instagramGetUrl } = require('./other')
 const shortener = (url) => {
   return url;
@@ -29,7 +28,6 @@ const mime = require("mime");
 const {
     JSDOM
 } = require("jsdom");
-const tool = require("./tools");
 const error = {
     link: {
         status: false,
@@ -976,54 +974,6 @@ exports.musicaldown = async (URL) => {
             });
     });
 };
-exports.reverseimage = async(buff, lang = 'id') => {
-    return new Promise(async(resolve, reject) => {
-        const upload = await tool.telegraph(buff)
-        const googles = await got(`https://www.google.com/searchbyimage?image_url=${upload}`,{
-            headers: {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'
-            }
-        }).text()
-        const surl = cheerio.load(googles)('#hdtb-msb > div:nth-child(1) > div > div:nth-child(1) > a').attr('href')
-        const geturl = await got(`https://www.google.com${surl}&lr=lang_id`, {
-            headers: {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'
-            }
-        }).text()
-        const $$ = cheerio.load(geturl)
-        const article = []
-        $$('div.tF2Cxc').each(function() {
-            const el = $$(this)
-            const title = el.find('div.yuRUbf > a > h3').text()
-            const url = el.find('div.yuRUbf > a[href]').attr('href')
-            const description = el.find('div.VwiC3b > span').text() || el.find('div.VwiC3b').text()
-            if (el.length && url) {
-                article.push({
-                    title: title,
-                    url,
-                    description: description
-                })
-            }
-        })
-        const surl2 = $$('#hdtb-msb > div:nth-child(1) > div > div:nth-child(2) > a').attr('href')
-        const getimg = await got(`https://www.google.com${surl2}`, {
-            headers: {
-                'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.93 Safari/537.36'
-            }
-        }).text()
-        const $ = cheerio.load(getimg)
-        const pattern = /\[1,\[0,"(?<id>[\d\w\-_]+)",\["https?:\/\/(?:[^"]+)",\d+,\d+\]\s?,\["(?<url>https?:\/\/(?:[^"]+))",\d+,\d+\]/gm
-        const matches = $.html().matchAll(pattern)
-        const decodeUrl = (url) => decodeURIComponent(JSON.parse(`"${url}"`))
-        const result = [...matches].map(({groups}) => decodeUrl(groups.url)).filter((v) => /.*\.jpe?g|png$/gi.test(v) && !v.includes('ebayimg'))
-        resolve({
-            creator: 'Zynfinity / Xfar',
-            query: surl.split('&q=')[1].split('&sa=')[0].replace(/\+/g, ' '),
-            article: article != '' ? article : false,
-            image: result != '' ? result : false
-        })
-    })
-}
 exports.google = async (query, lang = 'id') => {
     const body = await got('https://www.google.co.id/search', {
         searchParams: {
@@ -2129,50 +2079,6 @@ exports.asupanfilm = async (query) => {
         });
     });
 };
-exports.randomtt = async(user) => {
-  return new Promise(async(resolve, reject) => {
-    const getplink = await axios.get(await encodeUrl(`https://urlebird.com/search/?q=${user}`))
-    const plink = cheerio.load(getplink.data)('body > div.main').find('div.info.text-truncate > a').attr('href')
-    if(!plink) return resolve({status: false, message: 'User not found!'})
-    const vidlink = await axios.get(await encodeUrl(plink))
-    const $ = cheerio.load(vidlink.data)
-    const array = []
-    $('#thumbs > div > a').each(function(){
-      array.push($(this).attr('href'))
-    })
-    const {data} = await axios.get(await encodeUrl(await tool.randomobj(array)))
-    const $$ = cheerio.load(data)
-    const soundl = $$('body').find('div.music > a').attr('href')
-    if(soundl) sound = await axios.get(await encodeUrl(soundl))
-    else sound = false
-    const $$$ = cheerio.load(sound.data)
-    
-    resolve({
-      status: true,
-      user: {
-        username: $('body').find('div.col-md-auto.text-center.text-md-left.pl-0 > h1').text(),
-        fullname: $('body').find('div.col-md-auto.text-center.text-md-left.pl-0 > div > h5').text(),
-        bio: $('body > div.main').find('div.col-md-auto.text-center.text-md-left.pl-0 > div > p').text(),
-        follower: $('body > div.main').find('div.col-7.col-md-auto.text-truncate').text().split('🦄 ')[1],
-        profilepic: $('body > div.main').find('div.col-md-auto.justify-content-center.text-center > img').attr('src')
-      },
-      video: {
-        caption: $$('body > div.main > div > div > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(4) > a').text(),
-        plays: $$('body > div.main > div > div > div:nth-child(1) > div:nth-child(1) > div > div.info > span:nth-child(1)').text(),
-        likes: $$('body > div.main > div > div > div:nth-child(1) > div:nth-child(1) > div > div.info > span:nth-child(2)').text(),
-        comments: $$('body > div.main > div > div > div:nth-child(1) > div:nth-child(1) > div > div.info > span:nth-child(3)').text(),
-        share: $$('body > div.main > div > div > div:nth-child(1) > div:nth-child(1) > div > div.info > span:nth-child(4)').text(),
-        ago: $$('body').find('div.col-auto.text-left.pl-2 > h6').text(),
-        url: $$('body').find('div.video_html5 > video').attr('src')
-      },
-      sound: soundl ? {
-        title: $$$('body > div.main').find('h3:nth-child(3)').text(),
-        thumbnail: $$$('body').find('div.col-md-offset-4.col-md-2.mt-md-0.text-md-right > img').attr('src'),
-        url: $$$('body').find('audio > source').attr('src')
-      } : null
-    })
-  })
-}
 exports.trendtwit = (country) => {
     return new Promise((resolve, reject) => {
         axios
