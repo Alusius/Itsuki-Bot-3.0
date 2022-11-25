@@ -36,7 +36,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:Zynfinity/baileys",
+        "@adiwajshing/baileys": "^4.1.0",
         "@adiwajshing/keyed-db": "^0.2.4",
         "@bochilteam/scraper": "^2.0.0",
         "awesome-phonenumber": "^2.69.0",
