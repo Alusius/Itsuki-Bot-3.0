@@ -1,1 +1,1 @@
-worker: node hyzer.js
+worker: node .
