@@ -51,3 +51,4 @@ Untuk request atau report bug bisa chat saya disini [Whatsapp](https://wa.me/628
 [![X-Far](https://github.com/xfar05.png?size=100)](https://github.com/xfar05)
 [![Caliph](https://github.com/caliphdev.png?size=100)](https://github.com/caliphdev)
 [![BochilScraper](https://github.com/bochilteam.png?size=100)](https://github.com/bochilteam)
+[![Sad Team](https://github.com/sadteams.png?size=100)](https://github.com/sadteams)
