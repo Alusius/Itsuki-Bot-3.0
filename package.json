@@ -1,7 +1,7 @@
 {
     "name": "HYZEROFFICIAL-BOTMD",
     "version": "1.0.0",
-    "description": "Simple Bot WhatsApp",
+    "description": "WhatsApp Bot ( Base )",
     "depecrated": false,
     "main": "index.js",
     "directories": {
