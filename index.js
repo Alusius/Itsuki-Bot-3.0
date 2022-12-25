@@ -3,20 +3,10 @@ let cluster = require('cluster')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
-const CFonts = require('cfonts')
 const Readline = require('readline')
 const yargs = require('yargs/yargs')
 const rl = Readline.createInterface(process.stdin, process.stdout)
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
-
-CFonts.say('Simple Whatsapp Bot', {
-  colors: ['blueBright','yellowBright'],                                        font: 'block',
-  align: 'center',
-})
-CFonts.say(`BY HyzerDev`, {                                            
-colors: ['yellow'],                                                           
-font: 'console',                                                              align: 'center',
-})
 
 var isRunning = false
 /**
@@ -27,11 +17,7 @@ function start(file) {
   if (isRunning) return
   isRunning = true
   let args = [path.join(__dirname, file), ...process.argv.slice(2)]
-  CFonts.say([process.argv[0], ...args].join(' '), {
-    font: 'console',
-    align: 'center',
-    gradient: ['red', 'magenta']
-  })
+  console.log([process.argv[0], ...args].join(' '))
   cluster.setupMaster({
     exec: path.join(__dirname, file),
     args: args.slice(1),
@@ -54,9 +40,10 @@ function start(file) {
     isRunning = false
     console.error('Exited with code:', code)
     if (code === 0) return
+    start('hyzer.js')
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0])
-      start(file)
+      //start('main.js') start(file)
     })
   })
   let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
