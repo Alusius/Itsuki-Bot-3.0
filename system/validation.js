@@ -2,7 +2,7 @@ const sock = require('./socket')
 const util = require('util')
 const fs = require('fs')
 const chalk = require('chalk')
-const { proto, generateWAMessage, areJidsSameUser } = require('@adiwajshing/baileys')
+const { proto, generateWAMessage, areJidsSameUser } = require('baileys')
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 
 module.exports = {
@@ -299,7 +299,7 @@ toxic: false,
 once: false, 
 nsfw: false, 
 sewa: false,
-expires: 0,
+expired: 0,
 }
 
 let settings = global.db.data.settings[botNumber]
@@ -568,7 +568,7 @@ console.log(chalk.keyword('cyan')(`[ ${msg.isGroup ? 'GROUP CHAT' : 'PERSONAL CH
 // Menfess Made By Hyzer Official, Silahkan Pakai 😇
 if (msg.message && !msg.isCommand) {
 this.menfess = this.menfess ? this.menfess : {}
-if (this.menfess[msg.sender].id != 0 && msg.quoted.footerText == '_Menfess - Whatsapp Bot_') {
+if (this.menfess[msg.sender] && this.menfess[msg.sender].id != 0 && msg.quoted.footerText == '_Menfess - Whatsapp Bot_') {
 var txt =  `🚩 Hi kamu mendapatkan balasan menfess dari @${msg.sender.split('@')[0]}\n\n*Isi Balasan :* ${msg.text}`.trim()
 this.reply(this.menfess[msg.sender].dari, txt, null, { mentions: this.parseMention(txt) })
 this.reply(msg.from, "🚩 Berhasil mengirim balasan.", msg)
