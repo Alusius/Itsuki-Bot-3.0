@@ -13,8 +13,8 @@ generateForwardMessageContent,
 generateWAMessageFromContent,
 WAMessageStubType,
 WA_DEFAULT_EPHEMERAL
-} = require('@adiwajshing/baileys')
-const socket = require("@adiwajshing/baileys")
+} = require('baileys')
+const socket = require("baileys")
 const chalk = require('chalk')
 const fetch = require('node-fetch')
 const FileType = require('file-type')
