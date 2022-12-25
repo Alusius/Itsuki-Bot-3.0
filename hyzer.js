@@ -1,7 +1,8 @@
+(async () => {
 const {
-useSingleFileAuthState,
+useMultiFileAuthState,
 DisconnectReason
-} = require('@adiwajshing/baileys')
+} = require('baileys')
 const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
 const path = require('path')
@@ -22,8 +23,6 @@ low = require('./system/database/LowDB')
 }
 const { Low, JSONFile } = low
 const mongoDB = require('./system/database/mongoDB')
-
-sock.protoType()
 
 global.timestamp = {
 start: new Date
@@ -64,10 +63,10 @@ global.db.chain = _.chain(global.db.data)
 }
 loadDatabase()
 
-global.authFile = './system/connect/session.json'
+global.authFile = './kanaeru'
 global.isInit = !fs.existsSync(authFile)
-const { state, saveState } = useSingleFileAuthState(global.authFile)
 global.Info = JSON.parse(fs.readFileSync('./global/settings.json'))
+var { state, saveCreds } = await useMultiFileAuthState(authFile)
 
 const connectionOptions = {
   printQRInTerminal: true,
@@ -91,17 +90,11 @@ if (opts['server']) require('./system/server')(global.client, PORT)
 async function connectionUpdate(update) {
 const { connection, lastDisconnect } = update
 global.timestamp.connect = new Date
-if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && client.ws.readyState !== WebSocket.CONNECTING) {
-console.log(global.reloadHandler(true))
-}
+//if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && client.ws.readyState !== WebSocket.CONNECTING) {
+//console.log(global.reloadHandler(true))
+//}
 if (global.db.data == null) await loadDatabase()
-if (update.receivedPendingNotifications) {
-console.log('🚩 Berhasil mengaktifkan bot.')
-}
-if (update.qr != 0 && update.qr != undefined) {
-console.log('🚩 Scan QR Dibawah, Qr Expired Dalam 20 Detik.')
-console.log('\nQR : ', chalk.green(update.qr)) // have no idea
-}
+console.log(update)
 //console.log(JSON.stringify(update, null, 4))
 }
 
@@ -127,8 +120,7 @@ global.client = {
 if (!isInit) {
 client.ev.off('messages.upsert', client.handler)
 client.ev.off('group-participants.update', client.participantsUpdate)
-client.ev.off('connection.update', client.connectionUpdate)
-client.ev.off('creds.update', client.credsUpdate)    
+client.ev.off('connection.update', client.connectionUpdate)    
 }
 
 client.welcome = 'Welcome @user To Group @subject'
@@ -138,12 +130,10 @@ client.sdemote = '@user sekarang bukan admin!'
 client.handler = handler.handler.bind(client)  
 client.handler = handler.handler.bind(client)
 client.connectionUpdate = connectionUpdate.bind(client)
-client.credsUpdate = saveState.bind(client)
 client.participantsUpdate = handler.participantsUpdate.bind(client)
 
 client.ev.on('messages.upsert', client.handler)  
 client.ev.on('connection.update', client.connectionUpdate)
-client.ev.on('creds.update', client.credsUpdate)
 client.ev.on('group-participants.update', client.participantsUpdate)
 isInit = false
 return true
@@ -151,7 +141,7 @@ return true
 
 global.reloadFile = (file, options = {}) => {
 nocache(file, module => {
-console.log(chalk.keyword('yellow')(`File "${file}" telah diupdate, me-restart bot.`))
+//console.log(chalk.keyword('yellow')(`File "${file}" telah diupdate, me-restart bot.`))
 process.send("reset")
 })
 }
@@ -232,5 +222,4 @@ if (!s.convert && !s.magick && !s.gm) client.logger.warn('🚩 Stickers may not 
 }
 
 _quickTest()
-
-process.on('uncaughtException', console.error); //Safe Log Error
+})()
